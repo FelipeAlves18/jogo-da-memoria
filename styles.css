@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    margin: 20px auto;
+    justify-content: space-around;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: 150px;
+    background-color: #007BFF;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px;
+}
+
+.memory-card.flip .front-face {
+    transform: rotateY(0);
+}
+
+.memory-card.flip .back-face {
+    transform: rotateY(180deg);
+}
+
+.memory-card .front-face, .memory-card .back-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.5s;
+}
+
+.memory-card .front-face {
+    background-color: #fff;
+    transform: rotateY(180deg);
+}
+
+.memory-card .back-face {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
